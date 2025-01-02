@@ -3371,6 +3371,7 @@ container[-1] = 5;
 5) Язык Go. Что из нижеперечисленного приведёт к объявлению структуры?
 
 ```cpp
+a.
 var Address struct {
     Name    string
     City    string
@@ -3407,7 +3408,7 @@ john := Person {
     Age:  30,
 }
 ```
-> Ответ: a b d
+> Ответ: b c
 
 6) Дан фрагмент кода на С++. Что будет содержать переменная container после его выполнения?
 ```cpp
@@ -3435,7 +3436,7 @@ container.insert(container.begin(), 4);
 class MyClass{};
 ```
 Выберите все верные варианты, которые являются допустимыми объявлениям.
-> Ответ: Все
+> Ответ: double operator+ (MyClass a, MyClass b); double operator+ (MyClass a, double b); double operator+ (double a, MyClass b);
 
 10) Язык Go. Какие поля могут быть в структурном типе?
 > Ответ: Поля-ссылки; Не константные поля; Анонимные поля;
@@ -3538,7 +3539,7 @@ public:
 s.method(5);
 std::cout << s.value;
 ```
-> Ответ: Ошибка
+> Ответ: 1
 
 16) Язык Go. Что будет выведено на экран в результате работы этого кода?
 ```cpp
@@ -3593,7 +3594,7 @@ struct Point{
 std::map<std::string, int> container{{"1", 2}, {"3", 2}};
 container[-1] = 5;
 ```
->  Ответ: Пары: 1:2, 3:2, -1:5
+>  Ответ: Ошибка компиляции - недопустимый тип
 
 20) Дан фрагмент кода на Go. Каким образом можно получить доступ к полю x переменной var p Point = Point{}?
 ```go
@@ -3602,4 +3603,4 @@ type Point struct{
     y float64
 }
 ```
-> Ответ: fmt.Print( p.x )
+> Ответ: fmt.Print( (&p).x ); fmt.Print( p.x )
