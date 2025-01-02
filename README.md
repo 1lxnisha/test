@@ -3369,31 +3369,7 @@ container[-1] = 5;
 > Ответ: c. Пары: -1:5, 1:2, 3:2
 
 5) !!!Язык Go. Что из нижеперечисленного приведёт к объявлению структуры?
-> Ответ:
-```cpp
-var Address struct {
-    Name    string
-    City    string
-    Pincode int
-}
-```
-```cpp
-pizza := struct {
-    address string 
-    name string
-    cost int
-}{
-    address: "address",
-    name:    "Pizza",
-    cost:    100,
-}
-```
-```cpp
-type Employee struct {
-    name string
-    age int
-}
-```
+> Ответ: Все, кроме Джона
 
 6) Дан фрагмент кода на С++. Что будет содержать переменная container после его выполнения?
 ```cpp
@@ -3808,7 +3784,7 @@ std::vector<int> container2(container1.begin(), container1.end());
 ```
 > Ответ: 4, 3, 2, 1, 2, 3, 4
 
-37) !!!Дан фрагмент кода на С++ и класс MyClass объявленный как:
+37) Дан фрагмент кода на С++ и класс MyClass объявленный как:
 ```
 class MyClass{};
 ```
@@ -3828,7 +3804,7 @@ int BLACK = 0;
 Color color = Color::BLACK;
 std::cout << color;
 ```
-> Ответ: Ошибка. Для Color не определён оператор <<
+> Ответ: Ошибка. Повторное объявление имени BLACK
 
 39) Дан кода на Go. Что будет выведено на экран в результате его выполнения:
 ```go
