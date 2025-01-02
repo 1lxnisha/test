@@ -4185,3 +4185,166 @@ Color color = Color::BLACK;
 std::cout << color;
 ```
 > Ответ: 1
+
+61) Язык Go. В текущий пакет из пакета other была импортирована структура:
+```go
+type Book struct {
+    Title       string
+    author      string
+    Description string
+    Price       int
+    pages       int
+}
+```
+Какие поля будут доступны для использования в текущем пакете?
+> Ответ: Price; Title; Description
+
+62)  Дан фрагмент кода на Go. Что будет содержать переменная container после его выполнения?
+```cpp
+var container map[int]int = make(map[int]int)
+var a = container[-1]
+```
+> Ответ: Ошибка во время исполнения - попытка доступа к несуществующему ключу
+
+63) Язык С++. Что будет напечатано в результате исполнения следующего кода?
+```cpp
+#include <iostream>
+
+class A{
+    char value = 'a';
+public:
+    virtual void get(){
+        std::cout << value;
+    }
+};
+
+class B: public A{
+    char value = 'b';
+public:
+    virtual void get(){
+        std::cout << value;
+    }
+};
+
+void print(A* obj){
+    obj->get();
+}
+
+int main(){
+    print(new B);
+}
+```
+> Ответ: b
+
+64) Дан фрагмент кода на С++:
+```cpp
+struct MyClass{
+    double i = 1.0;
+};
+
+double operator+ (double a, MyClass b){
+    return a + b.i;
+}
+
+MyClass obj;
+double value = 2.0;
+```
+Выберите все выражения, которые НЕ вызовут ошибки:
+> Ответ: value + obj; value + value;
+
+65) Дан фрагмент кода на С++. Что отобразится на экране после его выполнения?
+```cpp
+class Point{
+    char i;
+public:
+    Point():i(0){}
+    Point(char val=0):i(val){}
+};
+ 
+int main(){
+    Point p;
+    std::cout << sizeof(p);
+}
+```
+> Ответ: 1
+
+66) Язык С++. Дан класс:
+```cpp
+class SomeClass{
+    int non_static_value = 0;
+    static const int static_value = 0;
+public:
+    static void static_method() {
+    }
+    static void other_static_method() {
+    }    
+
+    void non_static_method() {
+    }
+    void other_non_static_method() {
+    }
+};
+```
+> Ответ: Чтобы вызвать static_method НЕ обязательно иметь объект; В static_method можно использовать other_static_method; В static_method можно использовать static_value;
+
+67) Язык С++. Что будет напечатано в результате исполнения следующего кода?
+```cpp
+#include <iostream>
+
+class A{
+    char value = 'a';
+public:
+    void get(){
+        std::cout << value;
+    }
+};
+
+class B: public A{
+    char value = 'b';
+public:
+    void get(){
+        std::cout << value;
+    }
+};
+
+void print(A* obj){
+    obj->get();
+}
+
+int main(){
+    print(new B);
+}
+```
+> Ответ: a
+
+68) Язык С++. Дан класс:
+```
+class SomeClass{
+    int non_static_value = 0;
+    static const int static_value = 0;
+public:
+    static void static_method() {
+    }
+    static void other_static_method() {
+    }    
+
+    void non_static_method() {
+    }
+    void other_non_static_method() {
+    }
+};
+```
+Выберите все верные утверждения.
+> Ответ: все кроме Чтобы вызвать non_static_method НЕ обязательно иметь объект;
+
+69) Язык С++. Дана структура:
+```cpp
+struct Point{
+    int x,y;
+};
+```
+Каким образом можно создать переменную типа Point?
+> Ответ: Point p = {}; Point p {1, 2}; Point p = {1, 1};
+
+70) Язык С++. Что из перечисленного может быть использовано в качестве объявления конструктора по умолчанию для класса SomeClass?
+> Ответ: SomeClass() = default; SomeClass(){}
