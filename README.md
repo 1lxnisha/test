@@ -3960,3 +3960,228 @@ std::map<int, int> container;
 int a = container[-1];
 ```
 > Ответ: Ключ: -1 со значением: 0
+
+48) Дан фрагмент кода на С++. Что будет содержать переменная container2 после его выполнения?
+```cpp
+std::vector<int> container1{4, 3, 2, 1, 2, 3, 4};
+std::unordered_set<int> container2(container1.begin(), container1.end());
+```
+> Ответ: 1, 2, 3, 4 но в порядке зависящем от хэш-функции
+
+49) Какое, из перечисленных, ключевых слов нужно использовать при объявлении структуры в Go?
+> Ответ: struct
+
+50) Дан фрагмент кода на С++. Что будет содержать переменная container после его выполнения?
+```cpp
+std::vector<int> container{1, 2, 3, 2};
+container[-1] = 5;
+```
+> Ответ: Ошибка доступа - указанного элемента не существует
+
+51) Дан фрагмент кода на языке С++. Что выведется на экран в результате его работы?
+```cpp
+enum Color {
+    YELLOW,
+    BLACK = 0,
+    PINK,
+    GREEN
+};
+
+Color color = Color::BLACK;
+std::cout << color;
+```
+> Ответ: 0
+
+52) Дан кода на Go. Что будет выведено на экран в результате его выполнения:
+```cpp
+package main
+import "fmt"
+
+func change(abc []int) {
+    abc = append(abc, 4)
+    for i := range abc {
+        abc[i] = 4
+    }
+    fmt.Println(abc)
+}
+
+func main() {
+    abc := []int{1, 2, 3}
+    abc = append(abc, 4)
+    change(abc)
+    fmt.Println(abc)
+}
+```
+> Ответ: [4 4 4 4 4] [4 4 4 4]
+
+53) Дан код на языке Go:
+```
+package main
+import "fmt"
+
+func add(c map[int]int, value int){
+    c[len(c)] = value
+}
+
+func main() {
+    var container map[int]int = make(map[int]int)
+    add(container, 10)
+    fmt.Print(len(container))
+}
+```
+> Ответ: Переменная container изменится;
+
+54) Язык С++. Что будет напечатано в результате исполнения следующего кода?
+```cpp
+#include <iostream>
+
+class A{
+public:
+    void get(){
+        std::cout << 'A';
+    }
+};
+
+class B: public A{
+public:
+    virtual void get(){
+        std::cout << 'B';
+    }
+};
+
+class C: public B{
+public:
+    virtual void get(){
+        std::cout << 'C';
+    }
+};
+
+int main(){
+    C* obj = new A;
+    obj->get();
+}
+```
+> Вывод: Ошибка
+
+55)  Язык Go. Дан фрагмент кода:
+```
+type A struct{
+    value int
+}
+
+func (a *A) print(){
+    fmt.Print("*")
+}
+
+type Printer interface{
+    print()
+}
+
+func main() {
+    var obj *A = nil
+    p := Printer(obj)
+    
+    if p == nil{
+        fmt.Print("+")
+    } else {
+        fmt.Print("-")
+    }
+}
+```
+> Ответ: -
+
+56) Дан фрагмент кода на С++:
+```cpp
+class MyClass{
+public:
+    double i = 1.0;
+};
+
+double operator+ (MyClass a, double b){
+    return a.i + b;
+}
+
+MyClass obj;
+double value = 2.0;
+```
+> Ответ: obj + value; obj + 2.0; value + value;
+
+57) Дан фрагмент кода на С++. Что отобразится на экране после его выполнения?
+```cpp
+class Point{
+    char i;
+public:
+    Point(char val=0):i(val){}
+};
+ 
+int main(){
+    Point p;
+    std::cout << sizeof(p);
+}
+```
+> Ответ: 1
+
+58) Язык С++. Дан класс:
+```cpp
+class SomeClass{
+    int value = 0;
+public:
+    void one(){
+        value = 1;
+    }
+    void one() const{
+        std::cout << value;
+    }
+    
+    void two(){
+        value = 2;
+    }
+    
+    void three() const {
+        std::cout << 3;
+    }
+    
+    void four() {
+        std::cout << 4;
+    }
+};
+```
+и переменная созданная таким образом:
+```cpp
+const SomeClass s;
+```
+Какие из перечисленных вызовов метода НЕ приведут к ошибке?
+> Ответ: s.three();
+
+59) Каким образом можно создать переменную типа структура в языке С++?
+```cpp
+struct Point{
+    int x,y;
+};
+
+Point p1, p2;
+```
+```cpp
+struct{
+    int x,y;
+} p1, p2;
+```
+```cpp
+struct Point{
+    int x,y;
+} p1, p2;
+```
+
+60) Дан фрагмент кода на языке С++. Что выведется на экран в результате его работы?
+```
+enum Color {
+    YELLOW = 1,
+    BLACK = 1,
+    PINK,
+    GREEN
+};
+
+Color color = Color::BLACK;
+std::cout << color;
+```
+> Ответ: 1
