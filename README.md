@@ -3834,3 +3834,129 @@ var container map[int]int = make(map[int]int)
 container[-1] = 1
 ```
 > Ответ: Ключ: -1 со значением: 1
+
+41) Язык С++. Что будет напечатано в результате исполнения следующего кода?
+```cpp
+#include <iostream>
+
+class A{
+public:
+    void get(){
+        std::cout << 'A';
+    }
+};
+
+class B: public A{
+public:
+    virtual void get(){
+        std::cout << 'B';
+    }
+};
+
+class C: public B{
+public:
+    virtual void get(){
+        std::cout << 'C';
+    }
+};
+
+int main(){
+    A* obj = new C;
+    obj->get();
+}
+```
+> Ответ: A
+
+42) Язык Go. Дан фрагмент кода:
+```go
+type A struct{
+    value int
+}
+
+func (a *A) get() int{
+    return a.value
+}
+
+func (a *A) set(val int){
+    a.value = val
+}
+
+type Accessor interface{
+    get() int
+    set(val int)
+}
+
+func main() {
+    var obj A
+    g := Accessor(&obj)
+    g.set(10)
+    
+    fmt.Print(obj.get())
+}
+```
+> Ответ: 10
+
+43) Дан фрагмент кода на С++. Что отобразится на экране после его выполнения?
+```cpp
+class Point{
+    char i;
+public:
+    Point(char val):i(val){}
+};
+ 
+int main(){
+    Point p;
+    std::cout << sizeof(p);
+}
+```
+> Ответ: Ошибка. Отсутствует конструктор по умолчанию
+
+44) Дан фрагмент кода на языке С++. Что будет на экране в результате выполнения данного фрагмента?
+```cpp
+class SomeClass{
+public:
+    int value = 1;
+    void method(int value){
+        this->value = value;
+    }
+} s;
+
+s.method(5);
+std::cout << s.value;
+```
+> Ответ: 5
+
+45) Язык Go. Что будет выведено на экран в результате работы этого кода?
+```cpp
+package main
+import "fmt"
+
+type Data struct{
+    i int
+}
+
+func (d *Data) method(){
+    d.i = 1
+}
+
+func (d Data) method(){
+    d.i = 1
+}
+
+func main() {
+    var d *Data = &Data{}
+    d.method()
+    fmt.Print(d.i)
+}
+```
+> Ответ: Ошибка
+
+46) Где можно объявить структуру в языке С++?
+> Ответ: Внутри других структур; Внутри тела функции; Вне функции;
+
+47) Дан фрагмент кода на С++. Что будет содержать переменная container после его выполнения?
+```cpp
+std::map<int, int> container;
+int a = container[-1];
+```
+> Ответ: Ключ: -1 со значением: 0
