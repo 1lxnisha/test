@@ -4348,3 +4348,111 @@ struct Point{
 
 70) Язык С++. Что из перечисленного может быть использовано в качестве объявления конструктора по умолчанию для класса SomeClass?
 > Ответ: SomeClass() = default; SomeClass(){}; SomeClass(int a=0, int b=0){}
+
+71) Дан фрагмент кода на языке С++. Что выведется на экран в результате его работы?
+```cpp
+enum Color {
+    YELLOW = -2,
+    BLACK,
+    PINK = -1,
+    GREEN = 0
+};
+
+Color color = Color::BLACK;
+std::cout << color;
+```
+> Ответ: -1
+
+72) Язык Go. Структуры A, B и С и переменные a, b, c объявлены следующим образом:
+```cpp
+type A struct {
+    Title       string
+    Author      string
+}
+
+type B struct {
+    Title       string
+    Author      string
+}
+
+type C = struct {
+    Title       string
+    Author      string
+}
+    
+a := A{}
+b := B{}
+c := C{}
+```
+
+73) Дан фрагмент кода на С++:
+```cpp
+class MyClass{
+    double i = 1.0;
+    friend double operator+ (MyClass a, double b);
+};
+
+double operator+ (MyClass a, double b){
+    return a.i + b;
+}
+
+MyClass obj;
+double value = 2.0;
+```
+Выберите все выражения, которые НЕ вызовут ошибки:
+> Ответ: obj + 2.0; value + value; obj + value;
+
+74) Язык С++. Что из нижеперечисленного может быть полем структуры?
+> Ответ: Все
+
+75) Дан фрагмент кода на языке С++. Выберите верные утверждения.
+```cpp
+enum Color {
+    YELLOW = -2,
+    BLACK,
+    PINK = -2,
+    GREEN
+};
+```
+> Ответ: Ошибка. Дублирование значений; BLACK равно -1
+
+76) Язык Go. Какая структура называется анонимной?
+> Ответ: 
+```go
+var a struct {
+    Title     string
+    Author    string
+}
+```
+77) Язык С++. Для чего используется ключевое слово override?
+> Ответ: Это ключевое слово НЕ обязательно использовать. Оно заставляет компилятор проверить, что у предка существует такой же метод как текущий и что он виртуальный. Если это не так, будет ошибка компиляции;
+
+78) Дан фрагмент кода на С++. Каким образом можно создать один или несколько объектов класса Point?
+```cpp
+struct Point{
+    Point(){}
+};
+```
+>  Ответ: new Point(); new Point; Point p; Point p[10];
+
+79) Дан фрагмент кода на С++. Что будет на экране в результате выполнения данного фрагмента?
+```cpp
+class MyClass{
+public:
+    double i = 1.0;
+};
+
+MyClass obj;
+if (obj) std::cout << 1;
+else std::cout << 2;
+```
+> Ответ: Ошибка
+
+80) Язык С++. Дана структура:
+```cpp
+struct Point{
+    int x,y;
+};
+```
+Выберите фрагменты не вызывающие ошибки.
+> Ответ: Все, кроме p2 = p2 + p
