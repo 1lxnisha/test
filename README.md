@@ -3334,13 +3334,12 @@ int main() {
 
 2) Язык С++. Что из нижеперечисленного приведёт к объявлению структуры?
 
-> Ответ: b
+> Ответ: b e
 ```cpp
 struct a_struct{
     int a;
 };
 ```
-e
 ```cpp
 struct {
     int a;
@@ -3361,3 +3360,246 @@ std::cout << color;
 ```
 
 > Ответ: <code>1</code>
+
+4) Дан фрагмент кода на С++. Что будет содержать переменная container после его выполнения?
+```cpp
+std::map<int, int> container{{1, 2}, {3, 2}};
+container[-1] = 5;
+```
+> Ответ: c. Пары: -1:5, 1:2, 3:2
+
+5) Язык Go. Что из нижеперечисленного приведёт к объявлению структуры?
+
+```cpp
+var Address struct {
+    Name    string
+    City    string
+    Pincode int
+}
+
+b.
+type Employee struct {
+    name string
+    age int
+}
+
+c.
+type Mail = struct {
+    Address string
+    Message string
+    Code int
+}
+
+d.
+pizza := struct {
+    address string 
+    name string
+    cost int
+}{
+    address: "address",
+    name:    "Pizza",
+    cost:    100,
+}
+
+e.
+john := Person {
+    Name: "John Doe",
+    Age:  30,
+}
+```
+> Ответ: a b d
+
+6) Дан фрагмент кода на С++. Что будет содержать переменная container после его выполнения?
+```cpp
+std::set<int> container{1, 2, 3, 4};
+container.insert(container.begin(), 4);
+```
+> Ответ: 1, 2, 3, 4
+
+7) Дан фрагмент кода на Go. Что будет содержать переменная container после его выполнения?
+```go
+var container map[int]int
+container[-1] = 1
+```
+> Ответ: Ошибка во время исполнения - под словарь не выделена память.
+
+8) Дан фрагмент кода на С++. Что будет содержать переменная container после его выполнения?
+```cpp
+std::vector<int> container{1, 2, 3, 4};
+container.insert(container.begin(), 4);
+```
+> Ответ: 4, 1, 2, 3, 4
+
+9) Дан фрагмент кода на С++ и класс MyClass объявленный как:
+```cpp
+class MyClass{};
+```
+Выберите все верные варианты, которые являются допустимыми объявлениям.
+> Ответ: Все
+
+10) Язык Go. Какие поля могут быть в структурном типе?
+> Ответ: Поля-ссылки; Не константные поля; Анонимные поля;
+
+11) Дан кода на Go. Что будет выведено на экран в результате его выполнения:
+```go
+package main
+import "fmt"
+
+func change(abc []int) {
+    for i := range abc {
+        abc[i] = 4
+    }
+    fmt.Println(abc)
+}
+
+func main() {
+    abc := []int{1, 2, 3}
+    change(abc)
+    fmt.Println(abc)
+}
+```
+> Ответ: [4 4 4][4 4 4]
+
+12) Язык С++. Что будет напечатано в результате исполнения следующего кода?
+```cpp
+#include <iostream>
+
+class A{
+public:
+    void get(){
+        std::cout << 'A';
+    }
+};
+
+class B: public A{
+public:
+    void get(){
+        std::cout << 'B';
+    }
+};
+
+class C: public B{
+public:
+    void get(){
+        std::cout << 'C';
+    }
+};
+
+int main(){
+    A* obj = new C;
+    obj->get();
+}
+```
+> Ответ: А
+
+13) Язык Go. Дан фрагмент кода:
+```go
+type A struct{
+    value int
+}
+
+type Printer interface{
+    print()
+}
+
+func main() {
+    var obj A
+    p := Printer(&obj)
+    p.print()
+}
+```
+Что нужно добавить, чтобы он стал рабочим?
+>  Ответ: func (a *A) print(){
+    fmt.Print(a.value)
+}
+
+14) Дан фрагмент кода на С++. Что отобразится на экране после его выполнения?
+```cpp
+class Point{ 
+};
+ 
+int main(){
+    Point p;
+    std::cout << sizeof(p);
+}
+```
+> Ответ: 1
+
+15) Дан фрагмент кода на языке С++. Что будет на экране в результате выполнения данного фрагмента?
+```cpp
+class SomeClass{
+public:
+    int value = 1;
+    void method(int value){
+        value = value;
+    }
+} s;
+
+s.method(5);
+std::cout << s.value;
+```
+> Ответ: Ошибка
+
+16) Язык Go. Что будет выведено на экран в результате работы этого кода?
+```cpp
+package main
+import "fmt"
+
+type Data struct{
+    i int
+}
+
+func (d Data) method(){
+    d.i = 1
+}
+
+func main() {
+    var d *Data = &Data{}
+    d.method()
+    fmt.Print(d.i)
+}
+```
+> Ответ: 0
+
+17) Дан фрагмент кода на С++.
+```cpp
+class SomeClass{
+    int value = 0;
+public:
+    void method() const{
+        value = 1;
+        std::cout << value;
+    }
+};
+
+int main(){
+    const SomeClass s;
+    s.method();
+}
+```
+Что нужно добавить в код, чтобы код стал рабочим?
+> Ответ: Добавить ключевое слово mutable к объявлению value;
+
+18) Дан фрагмент кода на С++. Каким образом можно получить доступ к полю x переменной p?
+```cpp
+struct Point{
+    double x, y;
+} p;
+```
+> Ответ: p.x;
+
+19) Дан фрагмент кода на С++. Что будет содержать переменная container после его выполнения?
+```cpp
+std::map<std::string, int> container{{"1", 2}, {"3", 2}};
+container[-1] = 5;
+```
+>  Ответ: Пары: 1:2, 3:2, -1:5
+
+20) Дан фрагмент кода на Go. Каким образом можно получить доступ к полю x переменной var p Point = Point{}?
+```go
+type Point struct{
+    x float64
+    y float64
+}
+```
+> Ответ: fmt.Print( p.x )
