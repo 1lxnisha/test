@@ -3334,7 +3334,7 @@ int main() {
 
 2) Язык С++. Что из нижеперечисленного приведёт к объявлению структуры?
 
-> Ответ: b e
+> Ответ:
 ```cpp
 struct a_struct{
     int a;
@@ -3368,30 +3368,16 @@ container[-1] = 5;
 ```
 > Ответ: c. Пары: -1:5, 1:2, 3:2
 
-5) Язык Go. Что из нижеперечисленного приведёт к объявлению структуры?
-
+5) !!!Язык Go. Что из нижеперечисленного приведёт к объявлению структуры?
+> Ответ:
 ```cpp
-a.
 var Address struct {
     Name    string
     City    string
     Pincode int
 }
-
-b.
-type Employee struct {
-    name string
-    age int
-}
-
-c.
-type Mail = struct {
-    Address string
-    Message string
-    Code int
-}
-
-d.
+```
+```cpp
 pizza := struct {
     address string 
     name string
@@ -3401,14 +3387,13 @@ pizza := struct {
     name:    "Pizza",
     cost:    100,
 }
-
-e.
-john := Person {
-    Name: "John Doe",
-    Age:  30,
+```
+```cpp
+type Employee struct {
+    name string
+    age int
 }
 ```
-> Ответ: b c
 
 6) Дан фрагмент кода на С++. Что будет содержать переменная container после его выполнения?
 ```cpp
@@ -3439,7 +3424,7 @@ class MyClass{};
 > Ответ: double operator+ (MyClass a, MyClass b); double operator+ (MyClass a, double b); double operator+ (double a, MyClass b);
 
 10) Язык Go. Какие поля могут быть в структурном типе?
-> Ответ: Поля-ссылки; Не константные поля; Анонимные поля;
+> Ответ: Не константные поля; Анонимные поля;
 
 11) Дан кода на Go. Что будет выведено на экран в результате его выполнения:
 ```go
@@ -3493,7 +3478,7 @@ int main(){
 ```
 > Ответ: А
 
-13) Язык Go. Дан фрагмент кода:
+13) !!!Язык Go. Дан фрагмент кода:
 ```go
 type A struct{
     value int
@@ -3604,3 +3589,272 @@ type Point struct{
 }
 ```
 > Ответ: fmt.Print( (&p).x ); fmt.Print( p.x )
+
+21) !!!Дан фрагмент кода на С++. Что будет содержать переменная container после его выполнения?
+```cpp
+std::unordered_set<int> container{1, 2, 3, 4};
+container.insert(container.begin(), 4);
+```
+> Ответ: 1, 2, 3, 4 но в порядке зависящем от хэш-функции
+
+22) Дан фрагмент кода на С++. Что будет содержать переменная container2 после его выполнения?
+```cpp
+std::set<int> container1{4, 3, 2, 1, 2, 3, 4};
+std::vector<int> container2(container1.begin(), container1.end());
+```
+> Вывод: 1, 2, 3, 4
+
+23) Дан фрагмент кода на С++ и класс MyClass объявленный как:
+```cpp
+class MyClass{};
+```
+Выберите все верные варианты, которые являются допустимыми объявлениям.
+> Ответ: + - /
+
+24) Дан фрагмент кода на языке С++. Что выведется на экран в результате его работы?
+```cpp
+enum class Color {
+    YELLOW,
+    BLACK,
+    PINK,
+    GREEN
+};
+
+Color color = Color::BLACK;
+std::cout << color;
+```
+> Ответ: Ошибка. Для Color не определён оператор <<
+
+25) Дан кода на Go. Что будет выведено на экран в результате его выполнения:
+```go
+package main
+import "fmt"
+
+func change(abc []int) {
+    abc = append(abc, 4)
+    for i := range abc {
+        abc[i] = 4
+    }
+    fmt.Println(abc)
+}
+
+func main() {
+    abc := []int{1, 2, 3}
+    change(abc)
+    fmt.Println(abc)
+}
+```
+
+> Ответ: [4 4 4 4] [1 2 3]
+
+26) !!!Дан фрагмент кода на Go. Что будет содержать переменная container после его выполнения?
+```go
+var container map[string]int
+container[-1] = 1
+```
+> Ответ: Ошибка компиляции - недопустимый тип
+
+27) Язык С++. Что будет напечатано в результате исполнения следующего кода?
+```cpp
+#include <iostream>
+
+class A{
+public:
+    virtual void get(){
+        std::cout << 'A';
+    }
+};
+
+class B: public A{
+public:
+    void get(){
+        std::cout << 'B';
+    }
+};
+
+class C: public B{
+public:
+    void get(){
+        std::cout << 'C';
+    }
+};
+
+int main(){
+    A* obj = new C;
+    obj->get();
+}
+```
+> Ответ: C
+
+28) Язык Go. Дан фрагмент кода:
+```go
+type A struct{
+    value int
+}
+
+func (a A) get() int{
+    return a.value
+}
+
+func (a A) set(val int){
+    a.value = val
+}
+
+type Accessor interface{
+    get() int
+    set(val int)
+}
+
+func main() {
+    var obj A
+    g := Accessor(obj)
+    g.set(10)
+    
+    fmt.Print(obj.get())
+}
+```
+> Ответ: 0 
+
+29) Дан фрагмент кода на С++. Что отобразится на экране после его выполнения?
+```cpp
+class Point{
+    Point(){}
+};
+ 
+int main(){
+    Point p;
+    std::cout << sizeof(p);
+}
+```
+> Ответ: Ошибка
+
+30) !!!Дан фрагмент кода на языке С++. Что будет на экране в результате выполнения данного фрагмента?
+```cpp
+class SomeClass{
+    int value = 1;
+    void method(int value){
+        value = value;
+    }
+} s;
+
+s.method(5);
+std::cout << s.value;
+```
+> Ответ: Ошибка
+
+31) Язык Go. Что будет выведено на экран в результате работы этого кода?
+```cpp
+package main
+import "fmt"
+
+type Data struct{
+    i int
+}
+
+func (d *Data) method(){
+    d.i = 1
+}
+
+func main() {
+    var d Data = Data{}
+    d.method()
+    fmt.Print(d.i)
+}
+```
+> Ответ: 1
+
+32) Какое, из перечисленных, ключевых слов нужно использовать при объявлении структуры в С++?
+
+> Ответ: struct
+
+33) Дан код на языке Go:
+```cpp
+#include <iostream>
+#include <map>
+
+void add(std::map<int, int> c, int value){
+    c[c.size()] = value;
+}
+
+int main(){
+    std::map<int, int> container;
+    add(container, 10);
+    std::cout << container.size();
+}
+```
+В результате его исполнения:
+> Ответ: Переменная container не изменится;
+
+34) !!!Дан фрагмент кода на Go. Каким образом можно получить доступ к полю x переменной var p *Point = &Point{}?
+```cpp
+type Point struct{
+    x float64
+    y float64
+}
+```
+> Ответ: fmt.Print( (*p).x ) fmt.Print( p.x )
+
+35) Дан фрагмент кода на С++. Что будет содержать переменная container2 после его выполнения?
+```cpp
+std::vector<int> container1{4, 3, 2, 1, 2, 3, 4};
+std::set<int> container2(container1.begin(), container1.end());
+```
+> Ответ: 1,2,3,4
+
+36) Дан фрагмент кода на С++. Что будет содержать переменная container2 после его выполнения?
+```cpp
+std::vector<int> container1{4, 3, 2, 1, 2, 3, 4};
+std::vector<int> container2(container1.begin(), container1.end());
+```
+> Ответ: 4, 3, 2, 1, 2, 3, 4
+
+37) !!!Дан фрагмент кода на С++ и класс MyClass объявленный как:
+```
+class MyClass{};
+```
+Выберите все верные варианты, которые являются допустимыми объявлениям.
+> Ответ: void operator/ (MyClass a, double b); double operator/ (MyClass a, double b);
+
+38) !!!Дан фрагмент кода на языке С++. Что выведется на экран в результате его работы?
+```cpp
+enum Color {
+    YELLOW,
+    BLACK,
+    PINK,
+    GREEN
+};
+
+int BLACK = 0;
+Color color = Color::BLACK;
+std::cout << color;
+```
+> Ответ: 1
+
+39) Дан кода на Go. Что будет выведено на экран в результате его выполнения:
+```go
+package main
+import "fmt"
+
+func change(abc []int) {
+    abc = append(abc, 4)
+    for i := range abc {
+        abc[i] = 4
+    }
+    fmt.Println(abc)
+}
+
+func main() {
+    abc := []int{1, 2, 3}
+    change(abc)
+    abc = append(abc, 4)
+    fmt.Println(abc)
+}
+```
+> Ответ: [4 4 4 4] [1 2 3 4]
+
+40) Дан фрагмент кода на Go. Что будет содержать переменная container после его выполнения?
+```cpp
+var container map[int]int = make(map[int]int)
+container[-1] = 1
+```
+> Ответ: Ключ: -1 со значением: 1
