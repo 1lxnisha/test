@@ -3454,7 +3454,7 @@ int main(){
 ```
 > Ответ: А
 
-13) !!!Язык Go. Дан фрагмент кода:
+13) Язык Go. Дан фрагмент кода:
 ```go
 type A struct{
     value int
@@ -4121,7 +4121,7 @@ int main(){
 ```
 > Ответ: 1
 
-58) !!!Язык С++. Дан класс:
+58) Язык С++. Дан класс:
 ```cpp
 class SomeClass{
     int value = 0;
@@ -4347,4 +4347,4 @@ struct Point{
 > Ответ: Point p = {}; Point p {1, 2}; Point p = {1, 1};
 
 70) !!!Язык С++. Что из перечисленного может быть использовано в качестве объявления конструктора по умолчанию для класса SomeClass?
-> Ответ: SomeClass() = default; SomeClass(){}
+> Ответ: SomeClass() = default; SomeClass(){}; SomeClass(int a=0, int b=0){}
